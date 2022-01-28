@@ -7,7 +7,7 @@ clearBtn.addEventListener("click", () => {
   for (let i of grid_items) {
     i.style.backgroundColor = "#ededed";
   }
-})
+});
 const rgbaBtn = document.querySelector("#rgbaBtn");
 rgbaBtn.addEventListener("click", () => {
   colorMode = 1;
@@ -57,7 +57,9 @@ colorPicker.onchange = (e) => {
 // Change Grid Size
 const sizeSlider = document.querySelector("#sizeSlider");
 sizeSlider.onchange = (e) => {
-  toggleGridBtn.classList.toggle("deactive");
+  if (toggleGridBtn.classList.contains("deactive")) {
+    toggleGridBtn.classList.toggle("deactive");
+  }
   changeGridSize(e.target.value);
   clearGrid(container);
   createGrid(currentGridSize, container);
