@@ -23,9 +23,10 @@
             <input type="range" name="sizeSlider" id="sizeSlider" min="1" max="64" value="16">
         </div>
         <div class="options">
+            <button id="clearBtn" class="btn" style="background-color:green; cursor:pointer;">Clear</button>
             <button id="toggleBtn" class="btn">Toggle Grid</button>
-            <button id="rgbaBtn" class="btn">Toggle RGBA</button>
-            <button id="hslBtn" class="btn">Toggle HSL</button>
+            <button id="rgbaBtn" class="btn deactive">Toggle RGBA</button>
+            <button id="hslBtn" class="btn deactive">Toggle HSL</button>
             <div style="display:flex;flex-direction:column;text-align:center;">
                 <label for="colorPicker">Pick a Color</label>
                 <input id="colorPicker" type="color" value="#000000"></input>

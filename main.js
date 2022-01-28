@@ -2,14 +2,28 @@ const container = document.querySelector("#grid-container");
 const gridSizeText = document.querySelector("#gridSize");
 
 const toggleGridBtn = document.querySelector("#toggleBtn");
+const clearBtn = document.querySelector("#clearBtn");
+clearBtn.addEventListener("click", () => {
+  for (let i of grid_items) {
+    i.style.backgroundColor = "#ededed";
+  }
+})
 const rgbaBtn = document.querySelector("#rgbaBtn");
-rgbaBtn.addEventListener("click",() => {
+rgbaBtn.addEventListener("click", () => {
   colorMode = 1;
-})
+  rgbaBtn.classList.remove("deactive");
+  hslBtn.classList.remove("hslBtn");
+  hslBtn.classList.add("deactive");
+  rgbaBtn.classList.add("rgbaBtn");
+});
 const hslBtn = document.querySelector("#hslBtn");
-hslBtn.addEventListener("click",() => {
+hslBtn.addEventListener("click", () => {
   colorMode = 2;
-})
+  hslBtn.classList.remove("deactive");
+  rgbaBtn.classList.remove("rgbaBtn");
+  rgbaBtn.classList.add("deactive");
+  hslBtn.classList.add("hslBtn");
+});
 
 let colorMode = 0;
 let currentGridSize = 16;
@@ -32,10 +46,18 @@ const createRandomColorHSL = () => {
 
 const colorPicker = document.querySelector("#colorPicker");
 // Change Color
-colorPicker.onchange = (e) => (colorMode = 0,currentPaint = e.target.value);
+colorPicker.onchange = (e) => {
+  colorMode = 0;
+  currentPaint = e.target.value;
+  rgbaBtn.classList.add("deactive");
+  rgbaBtn.classList.remove("rgbaBtn");
+  hslBtn.classList.remove("hslBtn");
+  hslBtn.classList.add("deactive");
+};
 // Change Grid Size
 const sizeSlider = document.querySelector("#sizeSlider");
 sizeSlider.onchange = (e) => {
+  toggleGridBtn.classList.toggle("deactive");
   changeGridSize(e.target.value);
   clearGrid(container);
   createGrid(currentGridSize, container);
@@ -91,6 +113,7 @@ const hideGrid = () => {
 
 toggleGridBtn.addEventListener("click", () => {
   hideGrid();
+  toggleGridBtn.classList.toggle("deactive");
 });
 
 createGrid(currentGridSize, container);

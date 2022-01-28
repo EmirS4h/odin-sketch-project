@@ -81,8 +81,8 @@ input[type="color"]::-webkit-color-swatch-wrapper {
 input[type="color"]::-webkit-color-swatch {
   border: none;
 }
-#rgbaBtn {
-  background-image: linear-gradient(
+.rgbaBtn {
+  background: linear-gradient(
     to right top,
     #ff0000,
     #f36400,
@@ -98,7 +98,7 @@ input[type="color"]::-webkit-color-swatch {
     #004eff
   );
 }
-#hslBtn {
+.hslBtn {
   background: linear-gradient(
     90deg,
     #1f005c,
@@ -114,4 +114,8 @@ input[type="color"]::-webkit-color-swatch {
   gap: 10px;
   width: 50vw;
   margin: 2% auto auto auto;
+}
+.deactive {
+  background-color: gray !important;
+  color:rgb(187, 187, 187) !important;
 }
