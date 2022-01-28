@@ -22,11 +22,15 @@
             <label for="sizeSlider">Size: <span id="gridSize"></span></label>
             <input type="range" name="sizeSlider" id="sizeSlider" min="1" max="64" value="16">
         </div>
-
-        <button id="toggleBtn">Toggle Grid</button>
-        <button id="rgbaBtn">Toggle RGBA</button>
-        <button id="hslBtn">Toggle HSL</button>
-        <input id="colorPicker" type="color" value="#000000">RED</input>
+        <div class="options">
+            <button id="toggleBtn" class="btn">Toggle Grid</button>
+            <button id="rgbaBtn" class="btn">Toggle RGBA</button>
+            <button id="hslBtn" class="btn">Toggle HSL</button>
+            <div style="display:flex;flex-direction:column;text-align:center;">
+                <label for="colorPicker">Pick a Color</label>
+                <input id="colorPicker" type="color" value="#000000"></input>
+            </div>
+        </div>
     </div>
     <script src="main.js"></script>
 </body>
